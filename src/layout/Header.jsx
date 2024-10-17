@@ -9,6 +9,12 @@ export default function Header() {
 		setIsMenuOpen((prev) => !prev);
 	};
 
+	const handleScroll = (id) => {
+		const section = document.getElementById(id);
+		if (section)
+			section.scrollIntoView({ block: "center", behavior: "smooth" });
+	};
+
 	return (
 		<header className="bg-primaryBlueLight-50 lg:px-15 relative flex items-center justify-between px-6 md:px-10">
 			<figure className="-ml-8 w-32">
@@ -26,6 +32,10 @@ export default function Header() {
 							<a
 								href={`#${link.href}`}
 								className="text-primaryBlueLight-800 hover:text-primaryBlueLight-400 focus:border-primaryBlueLight-800 font-medium outline-none transition-all duration-300 ease-in-out focus:border-b-2"
+								onClick={(e) => {
+									e.preventDefault();
+									handleScroll(link.href);
+								}}
 							>
 								{link.text}
 							</a>
