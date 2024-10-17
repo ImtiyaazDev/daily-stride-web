@@ -1,3 +1,4 @@
+import Benefits from "./layout/Benefits";
 import Features from "./layout/Features";
 import Header from "./layout/Header";
 import Hero from "./layout/Hero";
@@ -9,6 +10,7 @@ export default function App() {
 			<main className="grid">
 				<Hero />
 				<Features />
+				<Benefits />
 			</main>
 		</div>
 	);
