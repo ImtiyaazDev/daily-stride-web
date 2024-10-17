@@ -5,11 +5,11 @@ export default function Hero() {
 			id="home"
 		>
 			<div className="flex flex-col items-center gap-8">
-				<div className="flex max-w-[600px] flex-col items-center gap-5 text-center">
-					<h1 className="font-heading text-primaryBlueLight-800 text-5xl font-bold">
+				<div className="flex max-w-[600px] flex-col items-center gap-5 text-center lg:max-w-[800px]">
+					<h1 className="font-heading text-primaryBlueLight-800 text-5xl font-bold lg:text-6xl">
 						Transform Your Journey with Daily Stride
 					</h1>
-					<p>
+					<p className="lg:max-w-[600px]">
 						At Daily Stride, we provide you with the tools to build lasting
 						habits, track your progress, and reflect on your journey—all in one
 						intuitive platform. Start today and see the difference with each
