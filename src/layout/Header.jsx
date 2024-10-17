@@ -24,7 +24,7 @@ export default function Header() {
 					{navLinks.map((link) => (
 						<li
 							key={link.id}
-							className="text-primaryBlueLight-800 font-medium"
+							className="text-primaryBlueLight-800 hover:text-primaryBlueLight-400 font-medium transition-all duration-300 ease-in-out"
 						>
 							<a href={`#${link.href}`}>{link.text}</a>
 						</li>
@@ -37,7 +37,7 @@ export default function Header() {
 						<IconSun />
 						<IconMoon />
 					</div>
-					<a className="bg-primaryRed-200 text-primaryRed-800 rounded-full px-3 py-2 md:px-4 md:py-3">
+					<a className="bg-primaryRed-200 text-primaryRed-800 hover:bg-primaryRed-100 hover:border-primaryRed-800 cursor-pointer rounded-full border-2 border-transparent px-3 py-2 transition-all duration-300 ease-in-out md:px-4 md:py-3">
 						Sign Up
 					</a>
 				</div>
