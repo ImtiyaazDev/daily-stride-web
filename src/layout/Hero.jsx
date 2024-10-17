@@ -1,7 +1,7 @@
 export default function Hero() {
 	return (
 		<section
-			className="lg:px-15 flex flex-col items-center gap-14 px-6 py-20 md:px-10"
+			className="lg:px-15 flex flex-col items-center gap-14 px-6 py-28 md:px-10"
 			id="home"
 		>
 			<div className="flex flex-col items-center gap-8">

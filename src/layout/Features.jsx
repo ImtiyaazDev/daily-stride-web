@@ -9,7 +9,7 @@ import { features } from "../data";
 export default function Features() {
 	return (
 		<section
-			className="lg:px-15 flex flex-col items-center gap-14 px-6 py-20 md:px-10"
+			className="lg:px-15 flex flex-col items-center gap-20 px-6 py-28 md:px-10"
 			id="features"
 		>
 			<div className="flex w-full flex-col items-start gap-4 lg:flex-row lg:justify-between">
@@ -30,7 +30,7 @@ export default function Features() {
 					seamless, intuitive space.
 				</p>
 			</div>
-			<article className="flex flex-col items-start gap-4 lg:flex-row lg:gap-8">
+			<article className="flex flex-col items-start gap-4 lg:flex-row lg:gap-7">
 				{features.map((feature) => (
 					<div
 						key={feature.id}
