@@ -2,6 +2,7 @@ import Benefits from "./layout/Benefits";
 import Features from "./layout/Features";
 import Header from "./layout/Header";
 import Hero from "./layout/Hero";
+import Testimonials from "./layout/Testimonials";
 
 export default function App() {
 	return (
@@ -11,6 +12,7 @@ export default function App() {
 				<Hero />
 				<Features />
 				<Benefits />
+				<Testimonials />
 			</main>
 		</div>
 	);
