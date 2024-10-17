@@ -8,7 +8,10 @@ export default {
 		extend: {
 			fontFamily: {
 				heading: ["Poppins", "Arial", "Helvetica", "sans-serif"]
-			}
+			},
+      padding: {
+        "15": "60px"
+      }
 		}
 	},
 	plugins: []
