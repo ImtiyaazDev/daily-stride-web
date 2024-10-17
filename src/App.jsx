@@ -1,3 +1,4 @@
+import Features from "./layout/Features";
 import Header from "./layout/Header";
 import Hero from "./layout/Hero";
 
@@ -7,6 +8,7 @@ export default function App() {
 			<Header />
 			<main className="grid">
 				<Hero />
+				<Features />
 			</main>
 		</div>
 	);
