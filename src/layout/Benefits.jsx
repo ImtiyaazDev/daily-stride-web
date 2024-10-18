@@ -1,7 +1,7 @@
 export default function Benefits() {
 	return (
 		<section
-			className="lg:px-15 bg-primaryBlueLight-50 flex flex-col items-center gap-20 px-6 py-28 md:flex-row md:px-10"
+			className="lg:px-15 bg-primaryBlueLight-50 flex flex-col items-center gap-8 px-6 py-28 md:flex-row md:px-10"
 			id="benefits"
 		>
 			<div className="flex w-full flex-col items-start gap-4 md:max-w-[700px] lg:gap-6">
@@ -39,10 +39,11 @@ export default function Benefits() {
 					</div>
 				</div>
 			</div>
-			<figure>
+			<figure className="w-96 sm:w-[450px] md:w-[700px] lg:w-[1000px]">
 				<img
-					src=""
-					alt="MOCKUP"
+					src="/assets/benefits.webp"
+					alt="Mockup of Daily Stride dashboard showcasing the goals and journals page"
+					loading="lazy"
 				/>
 			</figure>
 		</section>

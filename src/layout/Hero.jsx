@@ -1,7 +1,7 @@
 export default function Hero() {
 	return (
 		<section
-			className="lg:px-15 flex flex-col items-center gap-14 px-6 py-28 md:px-10"
+			className="lg:px-15 flex flex-col items-center gap-6 px-6 py-28 md:px-10"
 			id="home"
 		>
 			<div className="flex flex-col items-center gap-8">
@@ -23,9 +23,12 @@ export default function Hero() {
 					Get Started
 				</a>
 			</div>
-			<figure>
-				<img alt="Hero image" />
-				MOCKUP
+			<figure className="w-96 sm:w-[450px] md:w-[700px] lg:w-[1000px]">
+				<img
+					src="/assets/hero.webp"
+					alt="Mockup of Daily Stride dashboard showcasing the main dashboard for desktops and phone devices."
+					loading="lazy"
+				/>
 			</figure>
 		</section>
 	);
