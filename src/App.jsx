@@ -1,6 +1,7 @@
 import Benefits from "./layout/Benefits";
 import CallToAction from "./layout/CallToAction";
 import Features from "./layout/Features";
+import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import Hero from "./layout/Hero";
 import HowItWorks from "./layout/HowItWorks";
@@ -18,6 +19,7 @@ export default function App() {
 				<HowItWorks />
 				<CallToAction />
 			</main>
+			<Footer />
 		</div>
 	);
 }
