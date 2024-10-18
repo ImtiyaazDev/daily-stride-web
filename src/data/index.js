@@ -54,7 +54,8 @@ const testimonials = [
 			"Daily Stride has completely transformed how I approach personal growth. The platform's simplicity keeps me on track every day!",
 		user: "Sarah Mitchell",
 		position: "Marketing Manager at Horizon Media",
-		img: "",
+		img: "/users/sarah.webp",
+		alt: "Sarah Mitchell portrait",
 		redBackground: true,
 		rating: 5
 	},
@@ -64,7 +65,8 @@ const testimonials = [
 			"It's the perfect tool for staying consistent. I can finally see my progress clearly, and that's made all the difference for me.",
 		user: "Jason Alvarez",
 		position: "Product Designer at InnovateX",
-		img: "",
+		img: "/users/jason.webp",
+		alt: "Jason Alvarez portrait",
 		redBackground: false,
 		rating: 5
 	},
@@ -74,7 +76,8 @@ const testimonials = [
 			"Journaling and tracking my habits on Daily Stride has given me clarity and motivation like never before. Highly recommend!",
 		user: "Priya Patel",
 		position: "Software Engineer at Bright Labs",
-		img: "",
+		img: "/users/priya.webp",
+		alt: "Priya Patel portrait",
 		redBackground: true,
 		rating: 5
 	}
