@@ -19,7 +19,7 @@ export default function Testimonials() {
 				{testimonials.map((testimonial) => (
 					<div
 						key={testimonial.id}
-						className={`flex w-full flex-col gap-4 rounded-xl p-4 lg:p-6 ${testimonial.redBackground ? "bg-primaryRed-50" : "bg-primaryBlueLight-50"}`}
+						className={`flex w-full flex-col gap-4 rounded-xl p-4 drop-shadow-sm lg:p-6 ${testimonial.redBackground ? "bg-primaryRed-50" : "bg-primaryBlueLight-50"}`}
 					>
 						<div className="flex items-center gap-1">
 							{Array(testimonial.rating)
@@ -34,7 +34,12 @@ export default function Testimonials() {
 						<blockquote>&ldquo;{testimonial.quote}&rdquo;</blockquote>
 						<div className="flex items-center gap-4">
 							<figure>
-								<img src="" alt="user img"/>
+								<img
+									src={testimonial.img}
+									alt={testimonial.alt}
+									loading="lazy"
+									className={`aspect-square w-20 rounded-full border-4 ${testimonial.redBackground ? "border-primaryRed-200" : "border-primaryBlueLight-200"}`}
+								/>
 							</figure>
 							<div className="flex flex-col gap-1">
 								<p
