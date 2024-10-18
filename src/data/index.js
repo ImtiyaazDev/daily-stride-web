@@ -80,4 +80,22 @@ const testimonials = [
 	}
 ];
 
-export { navLinks, features, testimonials };
+const userActions = [
+	{
+		id: 1,
+		tagline: "Sign Up",
+		action: "Create an account in minutes."
+	},
+	{
+		id: 2,
+		tagline: "Set Your Goals",
+		action: "Choose habits to track and monitor"
+	},
+	{
+		id: 3,
+		tagline: "Reflect Daily",
+		action: "Use your journal to note your progress"
+	}
+];
+
+export { navLinks, features, testimonials, userActions };
