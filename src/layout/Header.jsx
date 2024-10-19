@@ -1,6 +1,7 @@
 import { IconMenu, IconMoon, IconSun, IconX } from "@tabler/icons-react";
 import { navLinks } from "../data/index";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,8 +16,25 @@ export default function Header() {
 			section.scrollIntoView({ block: "center", behavior: "smooth" });
 	};
 
+	const variants = {
+		hidden: { y: "-100px", opacity: 0 },
+		show: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				duration: 0.5,
+				ease: "easeIn"
+			}
+		}
+	};
+
 	return (
-		<header className="bg-primaryBlueLight-50 lg:px-15 relative flex items-center justify-between px-6 md:px-10">
+		<motion.header
+			initial="hidden"
+			animate="show"
+			variants={variants}
+			className="bg-primaryBlueLight-50 lg:px-15 relative flex items-center justify-between px-6 md:px-10"
+		>
 			<figure className="-ml-8 w-32">
 				<img
 					src="/assets/logo-transparent.png"
@@ -63,6 +81,6 @@ export default function Header() {
 					{!isMenuOpen ? <IconMenu /> : <IconX />}
 				</button>
 			</div>
-		</header>
+		</motion.header>
 	);
 }
