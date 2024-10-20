@@ -22,7 +22,7 @@ export default function Header() {
 			y: 0,
 			opacity: 1,
 			transition: {
-				duration: 0.5,
+				duration: 0.7,
 				ease: "easeIn"
 			}
 		}
