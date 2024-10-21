@@ -5,7 +5,6 @@ import {
 } from "@tabler/icons-react";
 
 import { motion, useInView } from "framer-motion";
-
 import { features } from "../data";
 import { useRef } from "react";
 
@@ -13,12 +12,25 @@ export default function Features() {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { margin: "0px 0px -250px 0px", once: true });
 
+	// Animation variants for each feature div
+	const featureVariants = {
+		hidden: { opacity: 0, y: 100 },
+		show: (index) => ({
+			opacity: 1,
+			y: 0,
+			transition: {
+				delay: 0.27 * index,
+				duration: 0.1
+			}
+		})
+	};
+
 	const content = {
 		hidden: { opacity: 0, x: "-200px" },
 		show: {
 			opacity: 1,
 			x: "0px",
-			transtion: { duration: 1.5, ease: "easeInOut" }
+			transition: { duration: 0.7, ease: "easeInOut" }
 		},
 		textHidden: { opacity: 0, x: "200px" },
 		textShow: {
@@ -68,10 +80,15 @@ export default function Features() {
 				</motion.p>
 			</div>
 			<article className="flex flex-col items-start gap-4 lg:flex-row lg:gap-7">
-				{features.map((feature) => (
-					<div
+				{features.map((feature, index) => (
+					<motion.div
 						key={feature.id}
-						className="bg-green-00 flex w-full flex-col gap-4"
+						className="feature | bg-green-00 flex w-full flex-col gap-4"
+						initial="hidden"
+						whileInView="show"
+						custom={index}
+						variants={featureVariants}
+						viewport={{ once: true }}
 					>
 						{feature?.heading.includes("Habit Tracking") && (
 							<IconCircleDashedCheck
@@ -98,7 +115,7 @@ export default function Features() {
 							<p className="text-lg font-medium">{feature.tagline}</p>
 						</div>
 						<p>{feature.text}</p>
-					</div>
+					</motion.div>
 				))}
 			</article>
 		</motion.section>
