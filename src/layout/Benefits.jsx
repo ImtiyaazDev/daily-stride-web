@@ -1,23 +1,70 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export default function Benefits() {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { margin: "0px 0px -250px 0px", once: true });
+
+	const contentVariants = {
+		hidden: { opacity: 0, x: "-200px" },
+		show: {
+			opacity: 1,
+			x: "0px",
+			transition: { duration: 0.7, ease: "easeInOut" }
+		},
+		textHidden: { opacity: 0, x: "200px" },
+		textShow: {
+			opacity: 1,
+			x: "0px",
+			transition: { duration: 0.7, ease: "easeInOut" }
+		}
+	};
+
+	const imageVariants = {
+		hidden: { opacity: 0, x: "200px", scale: 0.95 },
+		show: {
+			opacity: 1,
+			x: "0px",
+			scale: 1,
+			transition: { duration: 0.7, ease: "easeInOut" }
+		}
+	};
+
 	return (
 		<section
 			className="lg:px-15 bg-primaryBlueLight-50 flex flex-col items-center gap-8 px-6 py-28 md:flex-row md:px-10"
 			id="benefits"
+			ref={ref}
 		>
 			<div className="flex w-full flex-col items-start gap-4 md:max-w-[700px] lg:gap-6">
 				<div className="flex flex-col gap-2">
-					<h3 className="text-primaryRed-400 font-medium lg:text-xl">
+					<motion.h3
+						className="text-primaryRed-400 font-medium lg:text-xl"
+						variants={contentVariants}
+						initial="hidden"
+						animate={isInView ? "show" : "hidden"}
+					>
 						Benefits
-					</h3>
-					<h2 className="font-heading text-primaryBlueLight-950 text-3xl font-bold lg:text-5xl">
+					</motion.h3>
+					<motion.h2
+						className="font-heading text-primaryBlueLight-950 text-3xl font-bold lg:text-5xl"
+						variants={contentVariants}
+						initial="hidden"
+						animate={isInView ? "show" : "hidden"}
+					>
 						Empower Your Growth
-					</h2>
+					</motion.h2>
 				</div>
-				<p className="text-lg">
+				<motion.p
+					className="text-lg"
+					variants={contentVariants}
+					initial="textHidden"
+					animate={isInView ? "textShow" : "textHidden"}
+				>
 					Daily Stride is designed to help you cultivate positive habits and
 					gain insights into your self-improvement journey. By actively engaging
 					with your progress, you can make informed decisions and stay motivated
-				</p>
+				</motion.p>
 				<div className="flex flex-col items-center gap-3 lg:flex-row lg:gap-4">
 					<div className="flex w-full flex-col gap-2 lg:gap-3">
 						<h4 className="font-heading text-primaryRed-400 text-xl font-medium lg:text-2xl">
@@ -39,13 +86,18 @@ export default function Benefits() {
 					</div>
 				</div>
 			</div>
-			<figure className="w-96 sm:w-[450px] md:w-[700px] lg:w-[1000px]">
+			<motion.figure
+				className="w-96 sm:w-[450px] md:w-[700px] lg:w-[1000px]"
+				variants={imageVariants}
+				initial="hidden"
+				animate={isInView ? "show" : "hidden"}
+			>
 				<img
 					src="/assets/benefits.webp"
 					alt="Mockup of Daily Stride dashboard showcasing the goals and journals page"
 					loading="lazy"
 				/>
-			</figure>
+			</motion.figure>
 		</section>
 	);
 }
