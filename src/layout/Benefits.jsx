@@ -98,7 +98,7 @@ export default function Benefits() {
 				</div>
 			</div>
 			<motion.figure
-				className="w-96 sm:w-[450px] md:w-[700px] lg:w-[1000px]"
+				className="w-96 sm:w-[450px] md:w-[600px] lg:w-[1000px]"
 				variants={imageVariants}
 				initial="hidden"
 				animate={isInView ? "show" : "hidden"}
