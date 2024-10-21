@@ -47,6 +47,19 @@ const features = [
 	}
 ];
 
+const benefits = [
+	{
+		id: 1,
+		tagline: "Track Progess",
+		text: "Visualise your achievements and stay motivated with comprehensive analytics and insights."
+	},
+	{
+		id: 2,
+		tagline: "Reflect Daily",
+		text: "Use our daily journal to reflect on your experiences and foster personal growth."
+	}
+];
+
 const testimonials = [
 	{
 		id: 1,
@@ -101,4 +114,4 @@ const userActions = [
 	}
 ];
 
-export { navLinks, features, testimonials, userActions };
+export { navLinks, features, benefits, testimonials, userActions };
