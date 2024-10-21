@@ -59,7 +59,7 @@ export default function Header() {
 						<li key={link.id}>
 							<a
 								href={`#${link.href}`}
-								className="text-primaryBlueLight-800 hover:text-primaryBlueLight-400 focus:border-primaryBlueLight-800 dark:text-primaryBlueDark-200 font-medium outline-none transition-all duration-300 ease-in-out focus:border-b-2"
+								className="text-primaryBlueLight-800 hover:text-primaryBlueLight-400 focus:border-primaryBlueLight-800 dark:text-primaryBlueDark-200 dark:hover:text-primaryBlueDark-400 dark:focus:border-primaryBlueDark-400 font-medium outline-none transition-all duration-300 ease-in-out focus:border-b-2"
 								onClick={(e) => {
 									e.preventDefault();
 									handleScroll(link.href);
@@ -78,7 +78,7 @@ export default function Header() {
 						<IconMoon />
 					</div>
 					<a
-						className="bg-primaryRed-200 text-primaryRed-800 hover:bg-primaryRed-100 hover:border-primaryRed-800 focus:ring-offset-primaryRed-800 cursor-pointer rounded-full border-2 border-transparent px-3 py-2 outline-none transition-all duration-300 ease-in-out focus:ring focus:ring-transparent focus:ring-offset-2 md:px-4 md:py-3"
+						className="bg-primaryRed-200 text-primaryRed-800 hover:bg-primaryRed-100 hover:border-primaryRed-800 focus:ring-offset-primaryRed-800 dark:hover:border-primaryRed-400 dark:focus:ring-offset-primaryRed-400 cursor-pointer rounded-full border-2 border-transparent px-3 py-2 outline-none transition-all duration-300 ease-in-out focus:ring focus:ring-transparent focus:ring-offset-2 md:px-4 md:py-3"
 						href="#signup"
 					>
 						Sign Up
