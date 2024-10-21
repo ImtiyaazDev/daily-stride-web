@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { benefits } from "../data";
 
 export default function Benefits() {
 	const ref = useRef(null);
@@ -66,24 +67,17 @@ export default function Benefits() {
 					with your progress, you can make informed decisions and stay motivated
 				</motion.p>
 				<div className="flex flex-col items-center gap-3 lg:flex-row lg:gap-4">
-					<div className="flex w-full flex-col gap-2 lg:gap-3">
-						<h4 className="font-heading text-primaryRed-400 text-xl font-medium lg:text-2xl">
-							Track Progess
-						</h4>
-						<p>
-							Visualise your achievements and stay motivated with comprehensive
-							analytics and insights.
-						</p>
-					</div>
-					<div className="flex w-full flex-col gap-2 lg:gap-3">
-						<h4 className="font-heading text-primaryRed-400 text-xl font-medium lg:text-2xl">
-							Reflect Daily
-						</h4>
-						<p>
-							Use our daily journal to reflect on your experiences and foster
-							personal growth.
-						</p>
-					</div>
+					{benefits.map((benefit) => (
+						<div
+							className="flex w-full flex-col gap-2 lg:gap-3"
+							key={benefit.id}
+						>
+							<h4 className="font-heading text-primaryRed-400 text-xl font-medium lg:text-2xl">
+								{benefit.tagline}
+							</h4>
+							<p>{benefit.text}</p>
+						</div>
+					))}
 				</div>
 			</div>
 			<motion.figure
