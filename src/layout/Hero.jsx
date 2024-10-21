@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
 	const variants = {
-		hidden: { opacity: 0, x: "-1000px" },
+		hidden: { opacity: 0, x: "-150px" },
 		headingShow: {
 			opacity: 1,
 			x: "0px",
@@ -11,12 +11,12 @@ export default function Hero() {
 		textShow: {
 			opacity: 1,
 			x: "0px",
-			transition: { duration: 1.5, delay: 1.2, ease: "easeInOut" }
+			transition: { duration: 1.25, delay: 1.2, ease: "easeInOut" }
 		},
 		linkShow: {
 			opacity: 1,
 			x: "0px",
-			transition: { duration: 1.5, delay: 1.2, ease: "easeInOut" }
+			transition: { duration: .35, delay: 1.4, ease: "easeInOut" }
 		},
 		imageHidden: { opacity: 0, y: "200px" },
 		imageShow: {
