@@ -1,7 +1,41 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export default function CallToAction() {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" });
+
+	const variants = {
+		hidden: {
+			y: 100,
+			opacity: 0,
+			scale: 0.85,
+			borderRadius: "0px"
+		},
+		show: {
+			y: 0,
+			opacity: 1,
+			scale: 1,
+			borderRadius: "24px",
+			transition: {
+				duration: 0.75,
+				ease: "easeInOut",
+				borderRadius: { duration: 0.6, ease: "easeInOut", delay: 0.75 }
+			}
+		}
+	};
+
 	return (
-		<section className="lg:px-15 px-6 py-28 md:px-10">
-			<div className="bg-primaryBlueLight-50 flex w-full flex-col items-center gap-6 rounded-3xl p-6 text-center md:p-8 lg:p-10">
+		<section
+			className="lg:px-15 px-6 py-28 md:px-10"
+			ref={ref}
+		>
+			<motion.div
+				className="bg-primaryBlueLight-50 flex w-full flex-col items-center gap-6 p-6 text-center md:p-8 lg:p-10"
+				variants={variants}
+				initial="hidden"
+				animate={isInView ? "show" : "hidden"}
+			>
 				<h2 className="font-heading text-primaryBlueLight-900 text-3xl font-bold md:max-w-[550px] lg:text-4xl">
 					Start Your Self-Improvement Journey Today!
 				</h2>
@@ -15,7 +49,7 @@ export default function CallToAction() {
 				>
 					Join Now!
 				</a>
-			</div>
+			</motion.div>
 		</section>
 	);
 }
