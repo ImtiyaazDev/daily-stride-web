@@ -4,17 +4,37 @@ import {
 	IconBrandTiktok,
 	IconBrandX
 } from "@tabler/icons-react";
+import { delay, motion, useInView } from "framer-motion";
 import { navLinks } from "../data/index";
+import { useRef } from "react";
 
 export default function Footer() {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" });
+
 	const handleScroll = (id) => {
 		const section = document.getElementById(id);
 		if (section)
 			section.scrollIntoView({ block: "center", behavior: "smooth" });
 	};
 
+	const variants = {
+		hidden: { opacity: 0, y: -100 },
+		show: {
+			opacity: 1,
+			y: 0,
+			transition: { duration: 0.5, ease: "easeInOut", delay: 0.15 }
+		}
+	};
+
 	return (
-		<footer className="lg:px-15 flex flex-col items-center gap-12 px-6 pb-10 pt-6 md:px-10">
+		<motion.footer
+			className="lg:px-15 flex flex-col items-center gap-12 px-6 pb-10 pt-6 md:px-10"
+			ref={ref}
+			variants={variants}
+			initial="hidden"
+			animate={isInView ? "show" : "hidden"}
+		>
 			<div className="flex flex-col items-center">
 				<figure className="-mb-8 w-40">
 					<img
@@ -82,6 +102,6 @@ export default function Footer() {
 					</a>
 				</div>
 			</div>
-		</footer>
+		</motion.footer>
 	);
 }
