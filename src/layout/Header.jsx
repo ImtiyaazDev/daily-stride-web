@@ -33,7 +33,7 @@ export default function Header() {
 			initial="hidden"
 			animate="show"
 			variants={variants}
-			className="bg-primaryBlueLight-50 lg:px-15 relative flex items-center justify-between px-6 md:px-10"
+			className="bg-primaryBlueLight-50 lg:px-15 relative z-50 flex items-center justify-between px-6 md:px-10"
 		>
 			<figure className="-ml-8 w-32">
 				<img
