@@ -1,10 +1,12 @@
 import { IconMenu, IconMoon, IconSun, IconX } from "@tabler/icons-react";
 import { navLinks } from "../data/index";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const ref = useRef(null);
+	const isInView = useInView(ref);
 
 	const handleClick = () => {
 		setIsMenuOpen((prev) => !prev);
@@ -28,12 +30,20 @@ export default function Header() {
 		}
 	};
 
+	useEffect(
+		function () {
+			if (!isInView) setIsMenuOpen((prev) => !prev);
+		},
+		[isInView]
+	);
+
 	return (
 		<motion.header
 			initial="hidden"
 			animate="show"
 			variants={variants}
 			className="bg-primaryBlueLight-50 lg:px-15 relative z-50 flex items-center justify-between px-6 md:px-10"
+			ref={ref}
 		>
 			<figure className="-ml-8 w-32">
 				<img
