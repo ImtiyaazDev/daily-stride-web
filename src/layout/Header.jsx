@@ -89,7 +89,7 @@ export default function Header() {
 					</a>
 				</div>
 				<button
-					className="focus:ring-primaryBlueLight-700 text-primaryBlueLight-700 rounded-md outline-none focus:ring lg:hidden"
+					className={`${isDarkMode ? "dark:focus:ring-primaryBlueDark-400 text-primaryBlueDark-400" : "focus:ring-primaryBlueLight-700 text-primaryBlueLight-700"}rounded-md outline-none focus:ring lg:hidden`}
 					onClick={handleClick}
 				>
 					{!isMenuOpen ? <IconMenu /> : <IconX />}

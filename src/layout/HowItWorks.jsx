@@ -6,10 +6,12 @@ import {
 import { userActions } from "../data";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useDarkMode } from "../context/DarkModeContext";
 
 export default function HowItWorks() {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true, margin: "0px 0px -250px 0px" });
+	const { isDarkMode } = useDarkMode();
 
 	const contentVariants = {
 		hidden: { opacity: 0, y: "-50px" },
@@ -70,19 +72,19 @@ export default function HowItWorks() {
 						{action?.tagline.includes("Sign Up") && (
 							<IconClick
 								size={40}
-								color="#51abbf"
+								color={`${isDarkMode ? "#7594bb" : "#51abbf"}`}
 							/>
 						)}
 						{action?.tagline.includes("Set Your Goals") && (
 							<IconClipboardText
 								size={40}
-								color="#51abbf"
+								color={`${isDarkMode ? "#7594bb" : "#51abbf"}`}
 							/>
 						)}
 						{action?.tagline.includes("Reflect Daily") && (
 							<IconCalendarMonth
 								size={40}
-								color="#51abbf"
+								color={`${isDarkMode ? "#7594bb" : "#51abbf"}`}
 							/>
 						)}
 						<h4 className="font-heading text-primaryRed-400 text-xl font-medium lg:text-2xl">

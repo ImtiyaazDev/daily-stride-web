@@ -7,10 +7,12 @@ import {
 import { motion, useInView } from "framer-motion";
 import { features } from "../data";
 import { useRef } from "react";
+import { useDarkMode } from "../context/DarkModeContext";
 
 export default function Features() {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { margin: "0px 0px -250px 0px", once: true });
+	const { isDarkMode } = useDarkMode();
 
 	// Animation variants for each feature div
 	const featureVariants = {
@@ -93,20 +95,19 @@ export default function Features() {
 						{feature?.heading.includes("Habit Tracking") && (
 							<IconCircleDashedCheck
 								size={40}
-								// TODO: Add state variable for dark mode icons
-								color="#51abbf"
+								color={`${isDarkMode ? "#7594bb" : "#51abbf"}`}
 							/>
 						)}
 						{feature?.heading.includes("Stats Monitoring") && (
 							<IconChartBarPopular
 								size={40}
-								color="#51abbf"
+								color={`${isDarkMode ? "#7594bb" : "#51abbf"}`}
 							/>
 						)}
 						{feature?.heading.includes("Daily Journal") && (
 							<IconBook
 								size={40}
-								color="#51abbf"
+								color={`${isDarkMode ? "#7594bb" : "#51abbf"}`}
 							/>
 						)}
 						<div className="bg-re-100 flex flex-col gap-2">
