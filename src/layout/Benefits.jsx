@@ -21,6 +21,18 @@ export default function Benefits() {
 		}
 	};
 
+	const benefitVariants = {
+		hidden: { opacity: 0, y: 100 },
+		show: (index) => ({
+			opacity: 1,
+			y: 0,
+			transition: {
+				delay: 0.35 * index,
+				duration: 0.24
+			}
+		})
+	};
+
 	const imageVariants = {
 		hidden: { opacity: 0, x: "200px", scale: 0.95 },
 		show: {
@@ -67,16 +79,21 @@ export default function Benefits() {
 					with your progress, you can make informed decisions and stay motivated
 				</motion.p>
 				<div className="flex flex-col items-center gap-3 lg:flex-row lg:gap-4">
-					{benefits.map((benefit) => (
-						<div
+					{benefits.map((benefit, index) => (
+						<motion.div
 							className="flex w-full flex-col gap-2 lg:gap-3"
 							key={benefit.id}
+							variants={benefitVariants}
+							initial="hidden"
+							whileInView="show"
+							viewport={{ once: true }}
+							custom={index}
 						>
 							<h4 className="font-heading text-primaryRed-400 text-xl font-medium lg:text-2xl">
 								{benefit.tagline}
 							</h4>
 							<p>{benefit.text}</p>
-						</div>
+						</motion.div>
 					))}
 				</div>
 			</div>
