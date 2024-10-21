@@ -54,7 +54,8 @@ export default {
 				},
 				body: {
 					textLight: "#7B7B7B",
-					textDark: "#D8D8D8"
+					textDark: "#D8D8D8",
+					bg: "#1A1E26"
 				}
 			}
 		}
