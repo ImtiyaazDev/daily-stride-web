@@ -32,9 +32,9 @@ export default function Header() {
 
 	useEffect(
 		function () {
-			if (!isInView) setIsMenuOpen((prev) => !prev);
+			if (!isInView && isMenuOpen) setIsMenuOpen((prev) => !prev);
 		},
-		[isInView]
+		[isInView, isMenuOpen]
 	);
 
 	return (
