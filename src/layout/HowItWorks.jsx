@@ -48,7 +48,7 @@ export default function HowItWorks() {
 					How It Works
 				</motion.h3>
 				<motion.h2
-					className="font-heading text-primaryBlueLight-950 text-center text-3xl font-bold lg:text-5xl"
+					className="font-heading text-primaryBlueLight-950 dark:text-primaryBlueDark-200 text-center text-3xl font-bold lg:text-5xl"
 					variants={contentVariants}
 					initial="hidden"
 					animate={isInView ? "show" : "hidden"}

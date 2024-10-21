@@ -16,7 +16,7 @@ export default function Hero() {
 		linkShow: {
 			opacity: 1,
 			x: "0px",
-			transition: { duration: .35, delay: 1.4, ease: "easeInOut" }
+			transition: { duration: 0.35, delay: 1.4, ease: "easeInOut" }
 		},
 		imageHidden: { opacity: 0, y: "200px" },
 		imageShow: {
@@ -37,7 +37,7 @@ export default function Hero() {
 						variants={variants}
 						initial="hidden"
 						animate="headingShow"
-						className="font-heading text-primaryBlueLight-800 text-5xl font-bold lg:text-6xl"
+						className="font-heading text-primaryBlueLight-800 dark:text-primaryBlueDark-100 text-5xl font-bold lg:text-6xl"
 					>
 						Transform Your Journey with Daily Stride
 					</motion.h1>

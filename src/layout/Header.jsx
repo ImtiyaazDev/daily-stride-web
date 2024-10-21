@@ -42,7 +42,7 @@ export default function Header() {
 			initial="hidden"
 			animate="show"
 			variants={variants}
-			className="bg-primaryBlueLight-50 lg:px-15 relative z-50 flex items-center justify-between px-6 md:px-10"
+			className="bg-primaryBlueLight-50 lg:px-15 dark:bg-primaryBlueDark-950 relative z-50 flex items-center justify-between px-6 md:px-10"
 			ref={ref}
 		>
 			<figure className="-ml-8 w-32">
@@ -52,14 +52,14 @@ export default function Header() {
 				/>
 			</figure>
 			<nav
-				className={`bg-primaryBlueLight-50 absolute left-0 z-50 w-full px-6 py-8 transition-all duration-500 ease-in-out md:px-10 lg:static lg:w-fit lg:p-0 ${isMenuOpen ? "top-[100px]" : "-top-[1000px]"}`}
+				className={`bg-primaryBlueLight-50 dark:bg-primaryBlueDark-950 absolute left-0 z-50 w-full px-6 py-8 transition-all duration-500 ease-in-out md:px-10 lg:static lg:w-fit lg:p-0 ${isMenuOpen ? "top-[100px]" : "-top-[1000px]"}`}
 			>
 				<ul className="flex flex-col items-start gap-6 lg:flex-row">
 					{navLinks.map((link) => (
 						<li key={link.id}>
 							<a
 								href={`#${link.href}`}
-								className="text-primaryBlueLight-800 hover:text-primaryBlueLight-400 focus:border-primaryBlueLight-800 font-medium outline-none transition-all duration-300 ease-in-out focus:border-b-2"
+								className="text-primaryBlueLight-800 hover:text-primaryBlueLight-400 focus:border-primaryBlueLight-800 dark:text-primaryBlueDark-200 font-medium outline-none transition-all duration-300 ease-in-out focus:border-b-2"
 								onClick={(e) => {
 									e.preventDefault();
 									handleScroll(link.href);

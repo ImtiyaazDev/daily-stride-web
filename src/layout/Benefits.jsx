@@ -45,7 +45,7 @@ export default function Benefits() {
 
 	return (
 		<section
-			className="lg:px-15 bg-primaryBlueLight-50 flex flex-col items-center gap-8 px-6 py-28 md:flex-row md:px-10"
+			className="lg:px-15 bg-primaryBlueLight-50 dark:bg-primaryBlueDark-950 flex flex-col items-center gap-8 px-6 py-28 md:flex-row md:px-10"
 			id="benefits"
 			ref={ref}
 		>
@@ -60,7 +60,7 @@ export default function Benefits() {
 						Benefits
 					</motion.h3>
 					<motion.h2
-						className="font-heading text-primaryBlueLight-950 text-3xl font-bold lg:text-5xl"
+						className="font-heading text-primaryBlueLight-950 dark:text-primaryBlueDark-200 text-3xl font-bold lg:text-5xl"
 						variants={contentVariants}
 						initial="hidden"
 						animate={isInView ? "show" : "hidden"}

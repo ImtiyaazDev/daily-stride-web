@@ -49,7 +49,7 @@ export default function Footer() {
 							<li key={link.id}>
 								<a
 									href={`#${link.href}`}
-									className="text-primaryBlueLight-800 hover:text-primaryBlueLight-400 focus:border-primaryBlueLight-800 font-medium outline-none transition-all duration-300 ease-in-out focus:border-b-2"
+									className="text-primaryBlueLight-800 hover:text-primaryBlueLight-400 focus:border-primaryBlueLight-800 dark:text-primaryBlueDark-200 font-medium outline-none transition-all duration-300 ease-in-out focus:border-b-2"
 									onClick={(e) => {
 										e.preventDefault();
 										handleScroll(link.href);
@@ -62,29 +62,29 @@ export default function Footer() {
 					</ul>
 				</nav>
 			</div>
-			<div className="border-t-primaryBlueLight-400 flex w-full flex-col items-center gap-6 border-t pb-4 pt-8">
+			<div className="border-t-primaryBlueLight-400 dark:border-t-primaryBlueDark-400 flex w-full flex-col items-center gap-6 border-t pb-4 pt-8">
 				<div className="flex items-center gap-4">
 					<a
 						href="#"
-						className="focus:ring-primaryBlueLight-800 hover:text-primaryBlueLight-400 text-primaryBlueLight-800 scale-100 rounded-md outline-none transition-all duration-300 ease-in-out hover:scale-110 focus:ring"
+						className="focus:ring-primaryBlueLight-800 hover:text-primaryBlueLight-400 text-primaryBlueLight-800 dark:text-primaryBlueDark-200 scale-100 rounded-md outline-none transition-all duration-300 ease-in-out hover:scale-110 focus:ring"
 					>
 						<IconBrandInstagram size={28} />
 					</a>
 					<a
 						href="#"
-						className="focus:ring-primaryBlueLight-800 hover:text-primaryBlueLight-400 text-primaryBlueLight-800 scale-100 rounded-md outline-none transition-all duration-300 ease-in-out hover:scale-110 focus:ring"
+						className="focus:ring-primaryBlueLight-800 hover:text-primaryBlueLight-400 text-primaryBlueLight-800 dark:text-primaryBlueDark-200 scale-100 rounded-md outline-none transition-all duration-300 ease-in-out hover:scale-110 focus:ring"
 					>
 						<IconBrandFacebook size={28} />
 					</a>
 					<a
 						href="#"
-						className="focus:ring-primaryBlueLight-800 hover:text-primaryBlueLight-400 text-primaryBlueLight-800 scale-100 rounded-md outline-none transition-all duration-300 ease-in-out hover:scale-110 focus:ring"
+						className="focus:ring-primaryBlueLight-800 hover:text-primaryBlueLight-400 text-primaryBlueLight-800 dark:text-primaryBlueDark-200 scale-100 rounded-md outline-none transition-all duration-300 ease-in-out hover:scale-110 focus:ring"
 					>
 						<IconBrandX size={28} />
 					</a>
 					<a
 						href="#"
-						className="focus:ring-primaryBlueLight-800 hover:text-primaryBlueLight-400 text-primaryBlueLight-800 scale-100 rounded-md outline-none transition-all duration-300 ease-in-out hover:scale-110 focus:ring"
+						className="focus:ring-primaryBlueLight-800 hover:text-primaryBlueLight-400 text-primaryBlueLight-800 dark:text-primaryBlueDark-200 scale-100 rounded-md outline-none transition-all duration-300 ease-in-out hover:scale-110 focus:ring"
 					>
 						<IconBrandTiktok size={28} />
 					</a>
@@ -96,7 +96,7 @@ export default function Footer() {
 					<a
 						href="https://imtiyaazdev.vercel.app/"
 						target="_blank"
-						className="focus:border-primaryBlueLight-800 text-primaryBlueLight-800 hover:text-primaryBlueLight-400 outline-none transition-all duration-300 ease-in-out focus:border-b-2"
+						className="focus:border-primaryBlueLight-800 text-primaryBlueLight-800 hover:text-primaryBlueLight-400 dark:text-primaryBlueDark-400 outline-none transition-all duration-300 ease-in-out focus:border-b-2"
 					>
 						Designed and built by Imtiyaaz Isaacs
 					</a>

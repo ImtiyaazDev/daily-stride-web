@@ -31,12 +31,12 @@ export default function CallToAction() {
 			ref={ref}
 		>
 			<motion.div
-				className="bg-primaryBlueLight-50 flex w-full flex-col items-center gap-6 p-6 text-center md:p-8 lg:p-10"
+				className="bg-primaryBlueLight-50 dark:bg-primaryBlueDark-950 flex w-full flex-col items-center gap-6 p-6 text-center md:p-8 lg:p-10"
 				variants={variants}
 				initial="hidden"
 				animate={isInView ? "show" : "hidden"}
 			>
-				<h2 className="font-heading text-primaryBlueLight-900 text-3xl font-bold md:max-w-[550px] lg:text-4xl">
+				<h2 className="font-heading text-primaryBlueLight-900 dark:text-primaryBlueDark-200 text-3xl font-bold md:max-w-[550px] lg:text-4xl">
 					Start Your Self-Improvement Journey Today!
 				</h2>
 				<p className="md:max-w-[550px]">

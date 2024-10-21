@@ -44,7 +44,7 @@ export default function Testimonials() {
 					Testimonials
 				</motion.h3>
 				<motion.h2
-					className="font-heading text-primaryBlueLight-950 text-3xl font-bold lg:text-5xl"
+					className="font-heading text-primaryBlueLight-950 dark:text-primaryBlueDark-200 text-3xl font-bold lg:text-5xl"
 					variants={contentVariants}
 					initial="hidden"
 					animate={isInView ? "show" : "hidden"}
@@ -56,7 +56,7 @@ export default function Testimonials() {
 				{testimonials.map((testimonial, index) => (
 					<motion.div
 						key={testimonial.id}
-						className={`flex w-full flex-col gap-4 rounded-xl p-4 drop-shadow-sm lg:p-6 ${testimonial.redBackground ? "bg-primaryRed-50" : "bg-primaryBlueLight-50"}`}
+						className={`flex w-full flex-col gap-4 rounded-xl p-4 drop-shadow-sm lg:p-6 ${testimonial.redBackground ? "bg-primaryRed-50 dark:bg-primaryRed-950" : "bg-primaryBlueLight-50 dark:bg-primaryBlueDark-950"}`}
 						initial="hidden"
 						whileInView="show"
 						custom={index}
@@ -69,7 +69,7 @@ export default function Testimonials() {
 								.map((_, index) => (
 									<IconStarFilled
 										key={index}
-										className={`${testimonial.redBackground ? "text-primaryRed-800" : "text-primaryBlueLight-800"}`}
+										className={`${testimonial.redBackground ? "text-primaryRed-800 dark:text-primaryRed-300" : "text-primaryBlueLight-800 dark:text-primaryBlueDark-300"}`}
 									/>
 								))}
 						</div>
@@ -80,12 +80,12 @@ export default function Testimonials() {
 									src={testimonial.img}
 									alt={testimonial.alt}
 									loading="lazy"
-									className={`aspect-square w-20 rounded-full border-4 ${testimonial.redBackground ? "border-primaryRed-200" : "border-primaryBlueLight-200"}`}
+									className={`aspect-square w-20 rounded-full border-4 ${testimonial.redBackground ? "border-primaryRed-200 dark:border-primaryRed-800" : "border-primaryBlueLight-200 dark:border-primaryBlueDark-800"}`}
 								/>
 							</figure>
 							<div className="flex flex-col gap-1">
 								<p
-									className={`${testimonial.redBackground ? "text-primaryRed-800" : "text-primaryBlueLight-800"}`}
+									className={`${testimonial.redBackground ? "text-primaryRed-800 dark:text-primaryRed-300" : "text-primaryBlueLight-800 dark:text-primaryBlueDark-300"}`}
 								>
 									{testimonial.user}
 								</p>

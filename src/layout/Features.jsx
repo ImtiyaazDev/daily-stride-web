@@ -60,7 +60,7 @@ export default function Features() {
 						variants={content}
 						initial="hidden"
 						animate={isInView ? "show" : "hidden"}
-						className="font-heading text-primaryBlueLight-950 text-3xl font-bold lg:text-5xl"
+						className="font-heading text-primaryBlueLight-950 dark:text-primaryBlueDark-200 text-3xl font-bold lg:text-5xl"
 					>
 						Why Choose Daily Stride?
 					</motion.h2>
@@ -93,6 +93,7 @@ export default function Features() {
 						{feature?.heading.includes("Habit Tracking") && (
 							<IconCircleDashedCheck
 								size={40}
+								// TODO: Add state variable for dark mode icons
 								color="#51abbf"
 							/>
 						)}
