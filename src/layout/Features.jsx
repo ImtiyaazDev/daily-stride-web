@@ -9,12 +9,13 @@ import { features } from "../data";
 import { useRef } from "react";
 import { useDarkMode } from "../context/DarkModeContext";
 
+import MotionHeading from "../components/Heading";
+
 export default function Features() {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { margin: "0px 0px -250px 0px", once: true });
 	const { isDarkMode } = useDarkMode();
 
-	// Animation variants for each feature div
 	const featureVariants = {
 		hidden: { opacity: 0, y: 100 },
 		show: (index) => ({
@@ -45,27 +46,27 @@ export default function Features() {
 	return (
 		<motion.section
 			ref={ref}
-			className="lg:px-15 flex flex-col items-center gap-20 px-6 py-28 md:px-10"
+			className="flex flex-col items-center gap-20 px-6 py-28 md:px-10 lg:px-15"
 			id="features"
 		>
 			<div className="flex w-full flex-col items-start gap-4 lg:flex-row lg:justify-between">
 				<div className="flex flex-col gap-2 lg:max-w-[450px]">
-					<motion.h3
+					<MotionHeading
 						variants={content}
 						initial="hidden"
 						animate={isInView ? "show" : "hidden"}
-						className="text-primaryRed-400 font-medium lg:text-xl"
+						type="h4"
 					>
 						Features
-					</motion.h3>
-					<motion.h2
+					</MotionHeading>
+					<MotionHeading
 						variants={content}
 						initial="hidden"
 						animate={isInView ? "show" : "hidden"}
-						className="font-heading text-primaryBlueLight-950 dark:text-primaryBlueDark-200 text-3xl font-bold lg:text-5xl"
+						type="h2"
 					>
 						Why Choose Daily Stride?
-					</motion.h2>
+					</MotionHeading>
 				</div>
 				<motion.p
 					variants={content}
@@ -85,7 +86,7 @@ export default function Features() {
 				{features.map((feature, index) => (
 					<motion.div
 						key={feature.id}
-						className="feature | bg-green-00 flex w-full flex-col gap-4"
+						className="bg-green-00 flex w-full flex-col gap-4"
 						initial="hidden"
 						whileInView="show"
 						custom={index}
@@ -111,9 +112,9 @@ export default function Features() {
 							/>
 						)}
 						<div className="bg-re-100 flex flex-col gap-2">
-							<h4 className="font-heading text-primaryRed-400 text-2xl font-semibold">
+							<h3 className="font-heading text-2xl font-semibold text-primaryRed-400">
 								{feature.heading}
-							</h4>
+							</h3>
 							<p className="text-lg font-medium">{feature.tagline}</p>
 						</div>
 						<p>{feature.text}</p>

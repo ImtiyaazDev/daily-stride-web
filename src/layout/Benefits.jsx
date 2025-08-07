@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { benefits } from "../data";
+import MotionHeading from "../components/Heading";
 
 export default function Benefits() {
 	const ref = useRef(null);
@@ -45,28 +46,28 @@ export default function Benefits() {
 
 	return (
 		<section
-			className="lg:px-15 bg-primaryBlueLight-50 dark:bg-primaryBlueDark-950 flex flex-col items-center gap-8 px-6 py-28 md:flex-row md:px-10"
+			className="flex flex-col items-center gap-8 bg-primaryBlueLight-50 px-6 py-28 dark:bg-primaryBlueDark-950 md:flex-row md:px-10 lg:px-15"
 			id="benefits"
 			ref={ref}
 		>
 			<div className="flex w-full flex-col items-start gap-4 md:max-w-[700px] lg:gap-6">
 				<div className="flex flex-col gap-2">
-					<motion.h3
-						className="text-primaryRed-400 font-medium lg:text-xl"
+					<MotionHeading
+						type="h4"
 						variants={contentVariants}
 						initial="hidden"
 						animate={isInView ? "show" : "hidden"}
 					>
 						Benefits
-					</motion.h3>
-					<motion.h2
-						className="font-heading text-primaryBlueLight-950 dark:text-primaryBlueDark-200 text-3xl font-bold lg:text-5xl"
+					</MotionHeading>
+					<MotionHeading
+						type="h2"
 						variants={contentVariants}
 						initial="hidden"
 						animate={isInView ? "show" : "hidden"}
 					>
 						Empower Your Growth
-					</motion.h2>
+					</MotionHeading>
 				</div>
 				<motion.p
 					className="text-lg"
@@ -89,9 +90,9 @@ export default function Benefits() {
 							viewport={{ once: true }}
 							custom={index}
 						>
-							<h4 className="font-heading text-primaryRed-400 text-xl font-medium lg:text-2xl">
+							<h3 className="font-heading text-xl font-medium text-primaryRed-400 lg:text-2xl">
 								{benefit.tagline}
-							</h4>
+							</h3>
 							<p>{benefit.text}</p>
 						</motion.div>
 					))}
